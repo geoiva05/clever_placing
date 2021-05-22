@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>442</width>
-    <height>847</height>
+    <width>435</width>
+    <height>882</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -80,7 +80,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
      <string notr="true">background-color: rgb(255, 167, 15);</string>
     </property>
     <property name="text">
-     <string/>
+     <string>Посмотреть список своих учебников</string>
     </property>
    </widget>
   </widget>
@@ -89,7 +89,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>442</width>
+     <width>435</width>
      <height>25</height>
     </rect>
    </property>

@@ -2,6 +2,7 @@ import sqlite3
 
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QMessageBox, QDesktopWidget
+from forms.apposition import clever_placing
 
 
 class Entrance_Student(QMainWindow):
@@ -22,6 +23,10 @@ class Entrance_Student(QMainWindow):
         self.login = self.cur.execute(My_sql_query).fetchall()
         My_sql_query = f"""SELECT Password from Students where Password = "{self.edit_password.text()}" """
         self.passw = self.cur.execute(My_sql_query).fetchall()
+        My_sql_query = f"""SELECT main_admin from Students where Password = "{self.edit_password.text()}" """
+        self.main_admin = self.cur.execute(My_sql_query).fetchall()
+        My_sql_query = f"""SELECT admin from Students where Password = "{self.edit_password.text()}" """
+        self.admin = self.cur.execute(My_sql_query).fetchall()
         if self.edit_password.text() == '' or self.edit_login.text() == '':
             reply = QMessageBox.about(self, 'Error',
                                       "Заполните пустые строки.")
@@ -32,6 +37,8 @@ class Entrance_Student(QMainWindow):
             self.autorised = True
             self.user = self.login
             self.close()
+            self.app = clever_placing(self.user, self.autorised, self.main_admin, self.admin)
+            self.app.show()
 
     def enter(self):
         return self.user, self.autorised()
