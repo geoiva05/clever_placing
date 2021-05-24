@@ -8,8 +8,8 @@ from PyQt5.QtWidgets import QMainWindow, QMessageBox, QDesktopWidget
 class clever_placing(QMainWindow):
     def __init__(self, user, autorised, main_admin, admin):
         super().__init__()
-        self.polz = sqlite3.connect("data/clever_placing.db")
-        self.cur = self.polz.cursor()
+        self.con = sqlite3.connect("db/clever_placing.db")
+        self.cur = self.con.cursor()
         self.user = user
         self.autorised = autorised
         self.main_admin = main_admin
@@ -38,26 +38,115 @@ class clever_placing(QMainWindow):
         self.center()
         uic.loadUi('data/editing_student.ui', self)
         self.back.clicked.connect(self.returning)
+        self.finish.clicked.connect(self.finish_student)
+
+    def finish_student(self):
+        if self.id.text().isdigit():
+            id_user = self.id.text()
+            My_sql_query = f"""SELECT * from Students where _id_user = "{id_user}" """
+            self.student = self.cur.execute(My_sql_query).fetchall()
+            if self.student:
+                if self.new_surname.text():
+                    My_sql_query = f"""Update Students Set surname = "{self.new_surname.text()}"where _id_user = "{id_user}" """
+                    self.cur.execute(My_sql_query)
+                    self.con.commit()
+                if self.new_name.text():
+                    My_sql_query = f"""Update Students Set name = "{self.new_name.text()}"where _id_user = "{id_user}" """
+                    self.cur.execute(My_sql_query)
+                    self.con.commit()
+
+                if self.new_second_name.text():
+                    My_sql_query = f"""Update Students Set second_name = "{self.new_second_name.text()}"\
+                    where _id_user = "{id_user}" """
+                    self.cur.execute(My_sql_query)
+                    self.con.commit()
+                if self.new_class_number.text():
+                    My_sql_query = f"""Update Students Set class_number = "{self.new_class_number.text()}" \
+                    where _id_user = "{id_user}" """
+                    self.cur.execute(My_sql_query)
+                    self.con.commit()
+                if self.new_class_char.text():
+                    My_sql_query = f"""Update Students Set class_char = "{self.new_class_char.text()}"where _id_user = "{id_user}" """
+                    self.cur.execute(My_sql_query)
+                    self.con.commit()
+                if self.new_school.text():
+                    My_sql_query = f"""Update Students Set school = "{self.new_school.text()}"where _id_user = "{id_user}" """
+                    self.cur.execute(My_sql_query)
+                    self.con.commit()
+                reply = QMessageBox.about(self, 'Error',
+                                          "Редактирование успешно завершенно")
+                self.returning()
+            else:
+                reply = QMessageBox.about(self, 'Error',
+                                          "Введите существующий id")
+        else:
+            reply = QMessageBox.about(self, 'Error',
+                                      "Введите правильный id")
 
     def edit_books(self):
         self.center()
         uic.loadUi('data/editing_book.ui', self)
         self.back.clicked.connect(self.returning)
+        self.finish.clicked.connect(self.finish_book)
+
+    def finish_book(self):
+        if self.id.text().isdigit():
+            id_book = self.id.text()
+            My_sql_query = f"""SELECT * from Students where id_book = "{id_book}" """
+            self.student = self.cur.execute(My_sql_query).fetchall()
+            if self.student:
+                if self.new_name.text():
+                    My_sql_query = f"""Update Students Set name = "{self.new_name.text()}"where id_book = "{id_book}" """
+                    self.cur.execute(My_sql_query)
+                    self.con.commit()
+                if self.new_weigh.text():
+                    My_sql_query = f"""Update Students Set weigh = "{self.new_weigh.text()}"where id_book = "{id_book}" """
+                    self.cur.execute(My_sql_query)
+                    self.con.commit()
+                if self.new_second_name.text():
+                    My_sql_query = f"""Update Students Set author = "{self.new_author.text()}"where id_book = "{id_book}" """
+                    self.cur.execute(My_sql_query)
+                    self.con.commit()
+                if self.new_class_number.text():
+                    My_sql_query = f"""Update Students Set class_number = "{self.new_class_number.text()}"\
+                    where id_book = "{id_book}" """
+                    self.cur.execute(My_sql_query)
+                    self.con.commit()
+                reply = QMessageBox.about(self, 'Error',
+                                          "Редактирование успешно завершенно")
+                self.returning()
+            else:
+                reply = QMessageBox.about(self, 'Error',
+                                          "Введите существующий id")
+        else:
+            reply = QMessageBox.about(self, 'Error',
+                                      "Введите правильный id")
 
     def edit_lessons(self):
-        pass
+        self.center()
+        uic.loadUi('data/editing_time_table.ui', self)
+        self.back.clicked.connect(self.returning)
+        self.finish.clicked.connect(self.finish_lessons)
 
     def search_students(self):
-        pass
+        self.center()
+        uic.loadUi('data/searching_student.ui', self)
+        self.back.clicked.connect(self.returning)
 
     def time_table(self):
-        pass
+        self.center()
+        uic.loadUi('data/view_lessons.ui', self)
+        self.back.clicked.connect(self.returning)
 
     def give_admin(self):
-        pass
+        self.center()
+        uic.loadUi('data/give_admin.ui', self)
+        self.back.clicked.connect(self.returning)
 
     def search_books(self):
-        pass
+        self.center()
+        uic.loadUi('data/searching_book.ui', self)
+        self.back.clicked.connect(self.returning)
 
     def returning(self):
         if self.main_admin[0][0] == 1:
