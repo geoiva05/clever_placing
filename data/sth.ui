@@ -35,7 +35,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Профиль&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn_registration">
+   <widget class="QPushButton" name="view_lessons">
     <property name="geometry">
      <rect>
       <x>100</x>

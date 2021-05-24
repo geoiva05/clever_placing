@@ -100,7 +100,7 @@ class clever_placing(QMainWindow):
                     self.cur.execute(My_sql_query)
                     self.con.commit()
                 if self.new_weigh.text():
-                    My_sql_query = f"""Update Students Set weigh = "{self.new_weigh.text()}"where id_book = "{id_book}" """
+                    My_sql_query = f"""Update Students Set weigh = {float(self.new_weigh.text())}where id_book = "{id_book}" """
                     self.cur.execute(My_sql_query)
                     self.con.commit()
                 if self.new_second_name.text():
@@ -127,6 +127,50 @@ class clever_placing(QMainWindow):
         uic.loadUi('data/editing_time_table.ui', self)
         self.back.clicked.connect(self.returning)
         self.finish.clicked.connect(self.finish_lessons)
+
+    def finish_lessons(self):
+        if self.id.text().isdigit():
+            id_lesson = self.id.text()
+            My_sql_query = f"""SELECT * from Students where id_lesson = "{id_lesson}" """
+            self.student = self.cur.execute(My_sql_query).fetchall()
+            if self.student:
+                if self.new_name.text():
+                    My_sql_query = f"""Update Students Set number_lesson = {int(self.new_number_lesson.text())} \
+                    where id_lesson = "{id_lesson}" """
+                    self.cur.execute(My_sql_query)
+                    self.con.commit()
+                if self.new_subject.text():
+                    My_sql_query = f"""Update Students Set name_lesson = "{self.new_subject.text()}"where id_lesson = "{id_lesson}" """
+                    self.cur.execute(My_sql_query)
+                    self.con.commit()
+                if self.new_teacher.text():
+                    My_sql_query = f"""Update Students Set id_teacher = "{int(self.new_teacher.text())}"where id_lesson = "{id_lesson}" """
+                    self.cur.execute(My_sql_query)
+                    self.con.commit()
+                if self.new_class_number.text():
+                    My_sql_query = f"""Update Students Set day = "{self.new_class_number.text()}"\
+                    where id_lesson = "{id_lesson}" """
+                    self.cur.execute(My_sql_query)
+                    self.con.commit()
+                if self.new_class_char.text():
+                    My_sql_query = f"""Update Students Set day = "{self.new_class_char.text()}"\
+                    where id_lesson = "{id_lesson}" """
+                    self.cur.execute(My_sql_query)
+                    self.con.commit()
+                if self.new_book.text():
+                    My_sql_query = f"""Update Students Set day = "{self.new_class_char.text()}"\
+                    where id_lesson = "{id_lesson}" """
+                    self.cur.execute(My_sql_query)
+                    self.con.commit()
+                reply = QMessageBox.about(self, 'Error',
+                                          "Редактирование успешно завершенно")
+                self.returning()
+            else:
+                reply = QMessageBox.about(self, 'Error',
+                                          "Введите существующий id")
+        else:
+            reply = QMessageBox.about(self, 'Error',
+                                      "Введите правильный id")
 
     def search_students(self):
         self.center()

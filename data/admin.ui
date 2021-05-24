@@ -129,6 +129,22 @@
      <string>Искать учебник</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="add_book">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>747</y>
+      <width>261</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 167, 15);</string>
+    </property>
+    <property name="text">
+     <string>Добавить учебник</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
