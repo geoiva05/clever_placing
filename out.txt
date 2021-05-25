@@ -1,0 +1,14 @@
+15
+2
+6
+6
+6
+no neighbour
+25
+false
+false
+false
+false
+false
+false
+true

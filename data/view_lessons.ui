@@ -36,101 +36,14 @@
      <string notr="true">background-color: rgb(255, 167, 15);</string>
     </property>
     <property name="text">
-     <string>Просмотр урока</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="subject">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>130</y>
-      <width>251</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 167, 15);</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="teacher">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>170</y>
-      <width>251</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 167, 15);</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>130</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 167, 15);</string>
-    </property>
-    <property name="text">
-     <string>Введите название урока</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>170</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 167, 15);</string>
-    </property>
-    <property name="text">
-     <string>Введите учителя</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_7">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>90</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 167, 15);</string>
-    </property>
-    <property name="text">
-     <string>Введите id урока</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="id">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>90</y>
-      <width>291</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 167, 15);</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Просмотр расписания&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>330</y>
+      <y>200</y>
       <width>151</width>
       <height>31</height>
      </rect>
@@ -146,7 +59,7 @@
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>380</y>
+      <y>250</y>
       <width>311</width>
       <height>101</height>
      </rect>
@@ -161,8 +74,8 @@
    <widget class="QPushButton" name="back">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>510</y>
+      <x>120</x>
+      <y>380</y>
       <width>181</width>
       <height>41</height>
      </rect>
@@ -178,7 +91,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>210</y>
+      <y>120</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -194,52 +107,20 @@
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>210</y>
+      <y>120</y>
       <width>251</width>
       <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 167, 15);</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lesson_number">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>250</y>
-      <width>251</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 167, 15);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_14">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>250</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 167, 15);</string>
-    </property>
-    <property name="text">
-     <string>Введите номер урока</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_17">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>330</y>
+      <y>200</y>
       <width>191</width>
       <height>31</height>
      </rect>
@@ -255,7 +136,7 @@
     <property name="geometry">
      <rect>
       <x>210</x>
-      <y>290</y>
+      <y>160</y>
       <width>221</width>
       <height>31</height>
      </rect>
@@ -268,7 +149,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>290</y>
+      <y>160</y>
       <width>191</width>
       <height>31</height>
      </rect>
@@ -284,7 +165,7 @@
     <property name="geometry">
      <rect>
       <x>210</x>
-      <y>330</y>
+      <y>200</y>
       <width>221</width>
       <height>31</height>
      </rect>

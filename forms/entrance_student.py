@@ -19,6 +19,8 @@ class Entrance_Student(QMainWindow):
         self.btn_enter.clicked.connect(self.check)
 
     def check(self):
+        My_sql_query = f"""SELECT _id_user from Students where Login = "{str(self.edit_login.text())}" """
+        self.id_user = self.cur.execute(My_sql_query).fetchall()
         My_sql_query = f"""SELECT Login from Students where Login = "{str(self.edit_login.text())}" """
         self.login = self.cur.execute(My_sql_query).fetchall()
         My_sql_query = f"""SELECT Password from Students where Password = "{self.edit_password.text()}" """
@@ -37,7 +39,7 @@ class Entrance_Student(QMainWindow):
             self.autorised = True
             self.user = self.login
             self.close()
-            self.app = clever_placing(self.user, self.autorised, self.main_admin, self.admin)
+            self.app = clever_placing(self.user, self.autorised, self.main_admin, self.admin, self.id_user)
             self.app.show()
 
     def enter(self):

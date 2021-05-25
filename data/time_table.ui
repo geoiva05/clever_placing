@@ -17,30 +17,41 @@
    <string notr="true">background-color: rgb(103, 59, 99);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="info">
+   <widget class="QPushButton" name="back">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>261</width>
-      <height>71</height>
+      <x>120</x>
+      <y>430</y>
+      <width>181</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 167, 15);
-font: 28pt &quot;MS Shell Dlg 2&quot;;
-font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+     <string notr="true">background-color: rgb(255, 167, 15);</string>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Профиль&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>Назад</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="view_lessons">
+   <widget class="QTextBrowser" name="time_table">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>170</y>
-      <width>261</width>
+      <x>25</x>
+      <y>190</y>
+      <width>391</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 167, 15);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>40</y>
+      <width>201</width>
       <height>81</height>
      </rect>
     </property>
@@ -48,39 +59,23 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
      <string notr="true">background-color: rgb(255, 167, 15);</string>
     </property>
     <property name="text">
-     <string>Посмотреть расписание</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Просмотр расписания&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="main_button">
+   <widget class="QLabel" name="lab_tt">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>270</y>
-      <width>261</width>
-      <height>91</height>
+      <x>130</x>
+      <y>145</y>
+      <width>191</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 167, 15);</string>
     </property>
     <property name="text">
-     <string>Посмотреть соседей на завтра</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="view_my_books">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>390</y>
-      <width>261</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 167, 15);</string>
-    </property>
-    <property name="text">
-     <string>Посмотреть список своих учебников</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Рапсисание&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
   </widget>

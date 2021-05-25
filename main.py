@@ -33,11 +33,9 @@ class apposition(QMainWindow):
         self.ch = Entrance_Student()
         self.ch.show()
 
-
     def Regist(self):
         self.ch = Registration_Student()
         self.ch.show()
-
 
     def center(self):
         qr = self.frameGeometry()
