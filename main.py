@@ -1,4 +1,6 @@
 import sys
+import hashlib
+
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QDesktopWidget
 from forms.entrance_student import Entrance_Student

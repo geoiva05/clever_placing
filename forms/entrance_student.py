@@ -1,4 +1,5 @@
 import sqlite3
+import hashlib
 
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QMessageBox, QDesktopWidget

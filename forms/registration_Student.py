@@ -1,4 +1,5 @@
 import sys
+import hashlib
 import sqlite3
 
 from PyQt5 import uic
